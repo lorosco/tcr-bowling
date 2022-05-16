@@ -103,7 +103,8 @@ namespace BowlingGame.Test
             partieStrike.dropKeel(10);
             Assert.AreEqual(partieStrike.score,92);
             partieStrike.dropKeel(10);
-            Assert.AreEqual(partieStrike.score,102);
+            //le score final est affiché dans la console, une fois celui-ci affiché, la partie se réinitialise
+            //Assert.AreEqual(partieStrike.score,102);
         }
 
         [TestMethod]
@@ -120,7 +121,27 @@ namespace BowlingGame.Test
             Assert.AreEqual(partieSpare.score,82);
             Assert.AreEqual(partieSpare.currentSquare, 10);
             partieSpare.dropKeel(5);
-            Assert.AreEqual(partieSpare.score, 87);
+            //le score final est affiché dans la console, une fois celui-ci affiché, la partie se réinitialise
+            //Assert.AreEqual(partieSpare.score, 87);
+        }
+
+        [TestMethod]
+        public void isLastSquareCanBe2Shoot(){
+            Partie partieSpare = new Partie();
+            for (int i = 0; i < 9; i++)
+            {
+                partieSpare.dropKeel(5);
+                partieSpare.dropKeel(3);
+                Assert.AreEqual(partieSpare.score,8*(i+1));
+            }
+            partieSpare.dropKeel(5);
+            Assert.AreEqual(partieSpare.score,77);
+            partieSpare.dropKeel(2);
+            //le score final est affiché dans la console, une fois celui-ci affiché, la partie se réinitialise
+            //Assert.AreEqual(partieSpare.score,79);
+            Assert.AreEqual(partieSpare.currentSquare, 1);
+            partieSpare.dropKeel(5);
+            Assert.AreEqual(partieSpare.score, 5);
         }
     }
 }

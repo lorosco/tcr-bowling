@@ -39,6 +39,14 @@ namespace BowlingGame
             if((isAllLaunchDone() || areAllKeelsDown()) && currentSquare!=10){
                 nextSquare();
             }
+            if(currentSquare == 10 && currentLaunch==2 && currentKeel>0 && !isN1LaunchStrike){
+                int finalScore = endGame();
+                Console.Write("Your final score is:" + finalScore);
+            }
+            if(currentSquare == 10 && currentLaunch == 3){
+                int finalScore = endGame();
+                Console.Write("Your final score is:" + finalScore);
+            }
         }
 
         public void nextSquare(){
@@ -49,6 +57,16 @@ namespace BowlingGame
             }
         }
 
+        private int endGame(){
+            int score = this.score;
+            this.currentLaunch = 0;
+            this.currentSquare = 1;
+            this.isN1LaunchStrike = false;
+            this.isN2LaunchStrike = false;
+            this.isNextLaunchSpare = false;
+            this.score = 0;
+            return score;
+        }
         private Boolean areAllKeelsDown(){
             return currentKeel == 0;
         }

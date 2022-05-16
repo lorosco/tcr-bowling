@@ -1,0 +1,1 @@
+test.bat && commit.bat || revert.bat

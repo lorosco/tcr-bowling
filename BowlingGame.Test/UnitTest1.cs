@@ -6,22 +6,14 @@ namespace BowlingGame.Test
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
-        {
-            // initialisation de la partie avec un score à 0
-            public void intiScoreIsZero(){
-                var game = new Partie();
-                Assert.AreEqual(0, game.score());
-            }
+        // initialisation de la partie avec un score à 0
+        public void initScoreIsZero(){
+            var game = new Partie();
+            Assert.AreEqual(0, game.score());
         }
-        [TestMethod]
-        public void TestMethod1()
-        {
-            // initialisation de la partie avec un score à 0
-            public void intiScoreIsZero(){
-                var game = new Partie();
-                Assert.AreEqual(0, game.score());
-            }
+
+        public void test2(){
+            
         }
     }
 }

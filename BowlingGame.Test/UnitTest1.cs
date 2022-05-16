@@ -1,6 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace BowlingGame.Test
+namespace BowlingGame
 {
     [TestClass]
     public class UnitTest1
@@ -9,19 +8,8 @@ namespace BowlingGame.Test
         public void TestMethod1()
         {
             // initialisation de la partie avec un score à 0
-            public void intiScoreIsZero(){
-                var game = new Partie();
-                Assert.AreEqual(0, game.score());
-            }
-        }
-        [TestMethod]
-        public void TestMethod1()
-        {
-            // initialisation de la partie avec un score à 0
-            public void intiScoreIsZero(){
-                var game = new Partie();
-                Assert.AreEqual(0, game.score());
-            }
+            var game = new Partie();
+            Assert.AreEqual(0, game.score);
         }
     }
 }

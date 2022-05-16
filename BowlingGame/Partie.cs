@@ -8,23 +8,27 @@ namespace BowlingGame
         public Boolean isNextLaunchSpare;
 
         //lancé n-1
-        public Boolean isN1LaunchStrike;
+        public Boolean isN1LaunchStrike = false;
         //lancé n-2
-        public Boolean isN2LaunchStrike;
+        public Boolean isN2LaunchStrike = false;
 
         public void dropKeel(int number){
             if(isNextLaunchSpare){
-                this.score += 2*number;
-            }else{
                 this.score += number;
             }
-            
+            if(isN1LaunchStrike){
+                this.score += number;
+            }
+            if(isN2LaunchStrike){
+                this.score += number;
+            }
+            this.score += number;
             this.currentKeel -= number;
             currentLaunch++;
-            
-            if(currentLaunch == 2 && areAllKeelsDown()){
-                this.isNextLaunchSpare = true;
-            }
+            //Check all bonus incomming
+            this.isN2LaunchStrike = isN1LaunchStrike;
+            this.isN1LaunchStrike = currentLaunch == 1 && areAllKeelsDown();
+            this.isNextLaunchSpare = currentLaunch == 2 && areAllKeelsDown();
             if(isAllLaunchDone() || areAllKeelsDown()){
                 nextSquare();
             }

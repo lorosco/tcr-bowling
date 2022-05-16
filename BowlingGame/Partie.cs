@@ -1,5 +1,6 @@
 namespace BowlingGame
-{public class Partie{
-    public int score {get;}
-}
+{
+    public class Partie{
+        public int score {get;}
+    }
 }

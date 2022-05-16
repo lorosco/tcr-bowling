@@ -12,7 +12,6 @@ namespace BowlingGame.Test
         }
 
         [TestMethod]
-        [Ignore]
         public void initSquareWith10Keel(){
             var game = new Partie();
             Assert.AreEqual(10,game.currentKeel);
@@ -24,7 +23,6 @@ namespace BowlingGame.Test
         }
 
         [TestMethod]
-        [Ignore]
         public void dropKeelUpdateScore(){
             // lorsque le joueur effectue un lancer et fait tomber des quilles, le score est mis à jour
             var game = new Partie();

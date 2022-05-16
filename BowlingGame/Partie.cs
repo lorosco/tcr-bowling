@@ -5,6 +5,7 @@ namespace BowlingGame
 
         public int currentKeel {get; private set;} = 10;
         private int currentLaunch;
+        public Boolean isNextLaunchSpare;
 
         public void dropKeel(int number){
             this.score += number;

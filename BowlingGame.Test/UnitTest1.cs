@@ -48,5 +48,21 @@ namespace BowlingGame.Test
 
             Assert.AreEqual(game.currentKeel, 10);
         }
+
+        [TestMethod]
+        [Ignore]
+        public void isSpareCounted(){
+            Partie partie = new Partie();
+            
+            partie.dropKeel(7);
+            partie.dropKeel(3);
+
+            Assert.AreEqual(partie.isNextLaunchSpare, true);
+
+            partie.dropKeel(5);
+
+            Assert.AreEqual(partie.score, 20);
+        }
+
     }
 }

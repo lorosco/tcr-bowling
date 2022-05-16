@@ -64,7 +64,6 @@ namespace BowlingGame.Test
         }
 
         [TestMethod]
-        [Ignore]
         public void isStrikeCounted(){
             Partie partie = new Partie();
 

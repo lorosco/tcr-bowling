@@ -3,6 +3,7 @@ namespace BowlingGame
     public class Partie{
         public int score {get; private set;}
 
+        public int currentSquare {get; private set;} = 1;
         public int currentKeel {get; private set;} = 10;
         private int currentLaunch;
         public Boolean isNextLaunchSpare;
@@ -22,21 +23,26 @@ namespace BowlingGame
             if(isN2LaunchStrike){
                 this.score += number;
             }
-            this.score += number;
             this.currentKeel -= number;
             currentLaunch++;
+            if(!(currentSquare == 10 && currentLaunch>1)){
+                this.score += number;
+            }
             //Check all bonus incomming
             this.isN2LaunchStrike = isN1LaunchStrike;
             this.isN1LaunchStrike = currentLaunch == 1 && areAllKeelsDown();
             this.isNextLaunchSpare = currentLaunch == 2 && areAllKeelsDown();
-            if(isAllLaunchDone() || areAllKeelsDown()){
+            if((isAllLaunchDone() || areAllKeelsDown()) && currentSquare!=10){
                 nextSquare();
             }
         }
 
         public void nextSquare(){
             this.currentKeel = 10;
-            this.currentLaunch = 0;
+            if(this.currentSquare != 10){
+                this.currentLaunch = 0;
+                this.currentSquare +=1;
+            }
         }
 
         private Boolean areAllKeelsDown(){

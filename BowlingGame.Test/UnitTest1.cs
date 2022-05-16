@@ -89,7 +89,6 @@ namespace BowlingGame.Test
         }
 
         [TestMethod]
-        [Ignore]
         public void isLastSquareCanBe3ShootOr2(){
             Partie partieStrike = new Partie();
             for (int i = 0; i < 9; i++)
@@ -99,7 +98,10 @@ namespace BowlingGame.Test
                 Assert.AreEqual(partieStrike.score,8*(i+1));
             }
             partieStrike.dropKeel(10);
+            Assert.AreEqual(partieStrike.score,82);
+            Assert.AreEqual(partieStrike.currentSquare, 10);
             partieStrike.dropKeel(10);
+            Assert.AreEqual(partieStrike.score,92);
             partieStrike.dropKeel(10);
             Assert.AreEqual(partieStrike.score,102);
         }

@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-namespace BowlingGame
+namespace BowlingGame.Test
 {
     [TestClass]
     public class UnitTest1

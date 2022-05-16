@@ -50,7 +50,6 @@ namespace BowlingGame.Test
         }
 
         [TestMethod]
-        [Ignore]
         public void isSpareCounted(){
             Partie partie = new Partie();
             

@@ -8,9 +8,18 @@ namespace BowlingGame
         public Boolean isNextLaunchSpare;
 
         public void dropKeel(int number){
-            this.score += number;
+            if(isNextLaunchSpare){
+                this.score += 2*number;
+            }else{
+                this.score += number;
+            }
+            
             this.currentKeel -= number;
             currentLaunch++;
+            
+            if(currentLaunch == 2 && areAllKeelsDown()){
+                this.isNextLaunchSpare = true;
+            }
             if(isAllLaunchDone() || areAllKeelsDown()){
                 nextSquare();
             }
@@ -18,6 +27,7 @@ namespace BowlingGame
 
         public void nextSquare(){
             this.currentKeel = 10;
+            this.currentLaunch = 0;
         }
 
         private Boolean areAllKeelsDown(){

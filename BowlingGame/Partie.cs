@@ -7,6 +7,11 @@ namespace BowlingGame
         private int currentLaunch;
         public Boolean isNextLaunchSpare;
 
+        //lancé n-1
+        public Boolean isN1LaunchStrike;
+        //lancé n-2
+        public Boolean isN2LaunchStrike;
+
         public void dropKeel(int number){
             if(isNextLaunchSpare){
                 this.score += 2*number;

@@ -63,5 +63,34 @@ namespace BowlingGame.Test
             Assert.AreEqual(partie.score, 20);
         }
 
+        [TestMethod]
+        [Ignore]
+        public void isStrikeCounted(){
+            Partie partie = new Partie();
+
+            partie.dropKeel(10);
+
+            Assert.AreEqual(partie.isN1LaunchStrike, true);
+
+            partie.dropKeel(10);
+
+            Assert.AreEqual(partie.score,30);
+
+            Assert.AreEqual(partie.isN2LaunchStrike && partie.isN1LaunchStrike, true);
+
+            partie.dropKeel(3);
+
+            Assert.AreEqual(partie.score,39);
+
+            partie.dropKeel(3);
+
+            Assert.AreEqual(partie.score, 45);
+
+            Assert.AreEqual(partie.isN1LaunchStrike, false);
+
+            Assert.AreEqual(partie.isN2LaunchStrike, false);
+
+        }
+
     }
 }

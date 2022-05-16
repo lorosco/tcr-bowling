@@ -30,5 +30,25 @@ namespace BowlingGame.Test
 
             Assert.AreEqual(game.score,3);
         }
+
+        [TestMethod]
+        [Ignore]
+        public void isSquareResetWhenAllKeelsDown(){
+            Partie game = new Partie();
+            game.dropKeel(10);
+
+            Assert.AreEqual(game.currentKeel, 10);
+        }
+
+        [TestMethod]
+        [Ignore]
+        public void isSquareResetWhenAllLaunchDone(){
+            Partie game = new Partie();
+            game.dropKeel(2);
+
+            game.dropKeel(3);
+
+            Assert.AreEqual(game.currentKeel, 10);
+        }
     }
 }

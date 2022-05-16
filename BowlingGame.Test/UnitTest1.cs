@@ -86,10 +86,7 @@ namespace BowlingGame.Test
 
             Assert.AreEqual(partie.score, 45);
 
-            Assert.AreEqual(partie.isN1LaunchStrike, false);
-
-            Assert.AreEqual(partie.isN2LaunchStrike, false);
-
+            Assert.AreEqual(partie.isN1LaunchStrike && partie.isN2LaunchStrike, false);
         }
 
     }

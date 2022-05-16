@@ -25,7 +25,11 @@ namespace BowlingGame
             }
             this.currentKeel -= number;
             currentLaunch++;
+            //strike sur le dernier carreau
             if(!(currentSquare == 10 && currentLaunch>1)){
+                this.score += number;
+            }
+            if(currentSquare == 10 && !isN1LaunchStrike && currentLaunch>1 && !isNextLaunchSpare && !isN2LaunchStrike){
                 this.score += number;
             }
             //Check all bonus incomming

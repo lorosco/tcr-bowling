@@ -106,5 +106,21 @@ namespace BowlingGame.Test
             Assert.AreEqual(partieStrike.score,102);
         }
 
+        [TestMethod]
+        public void isLastSquareCanBe3ShootWithSpare(){
+            Partie partieSpare = new Partie();
+            for (int i = 0; i < 9; i++)
+            {
+                partieSpare.dropKeel(5);
+                partieSpare.dropKeel(3);
+                Assert.AreEqual(partieSpare.score,8*(i+1));
+            }
+            partieSpare.dropKeel(5);
+            partieSpare.dropKeel(5);
+            Assert.AreEqual(partieSpare.score,82);
+            Assert.AreEqual(partieSpare.currentSquare, 10);
+            partieSpare.dropKeel(5);
+            Assert.AreEqual(partieSpare.score, 87);
+        }
     }
 }

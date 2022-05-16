@@ -88,5 +88,21 @@ namespace BowlingGame.Test
             Assert.AreEqual(partie.isN1LaunchStrike && partie.isN2LaunchStrike, false);
         }
 
+        [TestMethod]
+        [Ignore]
+        public void isLastSquareCanBe3ShootOr2(){
+            Partie partieStrike = new Partie();
+            for (int i = 0; i < 9; i++)
+            {
+                partieStrike.dropKeel(5);
+                partieStrike.dropKeel(3);
+                Assert.AreEqual(partieStrike.score,8*(i+1));
+            }
+            partieStrike.dropKeel(10);
+            partieStrike.dropKeel(10);
+            partieStrike.dropKeel(10);
+            Assert.AreEqual(partieStrike.score,102);
+        }
+
     }
 }

@@ -32,7 +32,6 @@ namespace BowlingGame.Test
         }
 
         [TestMethod]
-        [Ignore]
         public void isSquareResetWhenAllKeelsDown(){
             Partie game = new Partie();
             game.dropKeel(10);
@@ -41,7 +40,6 @@ namespace BowlingGame.Test
         }
 
         [TestMethod]
-        [Ignore]
         public void isSquareResetWhenAllLaunchDone(){
             Partie game = new Partie();
             game.dropKeel(2);
